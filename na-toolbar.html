@@ -36,9 +36,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             }
 
             iron-icon {
-                height: 36px;
+
 
                 margin-right: 0.5em;
+            }
+
+            iron-icon .thin{
+                width: 21px;
+                height: 36px;
+            }
+            iron-icon .wide{
+                width: 43px;
+                height: 36px;
             }
 
             @media (min-width: 640px) {
@@ -52,9 +61,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 }
             }
         </style>
-        <iron-icon icon="custom-icons2:angle-left" role="img"></iron-icon>
+        <iron-icon icon="custom-icons2:angle-left" role="img" class="thin"></iron-icon>
         <h1></h1>
-        <iron-icon icon="custom-icons:breze-grau" role="img"></iron-icon>
+        <iron-icon icon="custom-icons:breze-grau" role="img" class="wide"></iron-icon>
         <iron-icon icon="cloud-off" hidden$="[[online]]"></iron-icon>
         <paper-icon-button
                 icon="[[computeLockIcon(signedIn)]]"
