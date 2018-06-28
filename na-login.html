@@ -42,7 +42,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         text-transform: none;
       }
     </style>
-    <paper-button on-tap="signIn" disabled="[[disabled]]">
+        <paper-button on-tap="signInMobile" disabled="[[disabled]]">
+      <iron-icon icon="image:view-comfy"></iron-icon>
+      <span>MOBILE SIGN UP</span>
+    </paper-button>
+        <paper-button on-tap="signIn" disabled="[[disabled]]">
+      <iron-icon icon="account-circle"></iron-icon>
+      <span>Sign in with Google</span>
+    </paper-button>
+    <paper-button on-tap="signInFb" disabled="[[disabled]]">
       <iron-icon icon="account-circle"></iron-icon>
       <span>Sign in with Google</span>
     </paper-button>
