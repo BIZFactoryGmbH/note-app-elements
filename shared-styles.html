@@ -15,50 +15,54 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
 
 <dom-module id="note-app-shared-styles">
-  <template>
-    <style>
-      :host {
-        display: block;
-        background-image: -webkit-gradient(linear, left top, left bottom, from(#70db9e), to(#19a1cd));
-    background-image: linear-gradient(to bottom, #70db9e, #19a1cd);
-	height: 100vh;
-        @apply --paper-font-common-base;
+    <template>
+        <style>
+            :host {
+                display: block;
+                background-image: -webkit-gradient(linear, left top, left bottom, from(#70db9e), to(#19a1cd));
+                background-image: linear-gradient(to bottom, #70db9e, #19a1cd);
+                height: 100vh;
+                @apply --paper-font-common-base;
 
-        --paper-fab-background: var(--paper-teal-500);
-      }
+                --paper-fab-background: var(--paper-teal-500);
+            }
 
+            .notes {
+                position: relative;
+                box-sizing: border-box;
+                padding: 1em;
+                max-height: calc(100vh - 46px);
+                overflow: auto;
+            }
 
-      .notes {
-        position: relative;
-        box-sizing: border-box;
-        padding: 1em;
-        max-height: calc(100vh - 46px);
-        overflow: auto;
-      }
+            na-toolbar {
+                height: 56px;
+                padding: 0 8px;
+            }
 
-      na-note {
-        margin-bottom: 1em;
-      }
+            na-note {
+                margin-bottom: 1em;
+            }
 
-      paper-fab {
-        position: absolute;
-        bottom: 1em;
-        right: 1em;
-      }
+            paper-fab {
+                position: absolute;
+                bottom: 1em;
+                right: 1em;
+            }
 
-      @media (min-width: 640px) {
-        na-note {
-          max-width: 320px;
-          margin: 0 0.5em 1em;
-        }
+            @media (min-width: 640px) {
+                na-note {
+                    max-width: 320px;
+                    margin: 0 0.5em 1em;
+                }
 
-        .notes {
-          @apply --layout-horizontal;
-          @apply --layout-wrap;
-          justify-content: center;
-          align-content: space-around;
-        }
-      }
-    </style>
-  </template>
+                .notes {
+                    @apply --layout-horizontal;
+                    @apply --layout-wrap;
+                    justify-content: center;
+                    align-content: space-around;
+                }
+            }
+        </style>
+    </template>
 </dom-module>
