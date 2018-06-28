@@ -16,73 +16,75 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../app-storage/app-network-status-behavior.html">
 
 <dom-module id="na-toolbar">
-  <template>
-    <style>
-      :host {
-        @apply --layout-horizontal;
-        @apply --layout-center;
-        background-color: transparent;
-        color: var(--paper-light-green-50);
-        padding: 6px 8px;
-        --paper-icon-button-disabled: {
-          color: var(--paper-purple-50);
-        };
-      }
+    <template>
+        <style>
+            :host {
+                @apply --layout-horizontal;
+                @apply --layout-center;
+                background-color: transparent;
+                color: var(--paper-light-green-50);
+                padding: 6px 8px;
+                --paper-icon-button-disabled: {
+                    color: var(--paper-purple-50);
+                };
+            }
 
-      h1 {
-        font-size: 14px;
-        flex-grow: 1;
-        margin: 9px 0;
-      }
+            h1 {
+                font-size: 14px;
+                flex-grow: 1;
+                margin: 9px 0;
+            }
 
-      iron-icon {
-        margin-right: 0.5em;
-      }
+            iron-icon {
+                height: 36px;
 
-      @media (min-width: 640px) {
-        iron-icon,
-        paper-icon-button {
-          margin-right: 1.5em;
+                margin-right: 0.5em;
+            }
+
+            @media (min-width: 640px) {
+                iron-icon,
+                paper-icon-button {
+                    margin-right: 1.5em;
+                }
+
+                iron-icon:first-child {
+                    margin-left: 1em;
+                }
+            }
+        </style>
+        <iron-icon icon="custom-icons2:angle-left" role="img"></iron-icon>
+        <h1></h1>
+        <iron-icon icon="custom-icons:breze-grau" role="img"></iron-icon>
+        <iron-icon icon="cloud-off" hidden$="[[online]]"></iron-icon>
+        <paper-icon-button
+                icon="[[computeLockIcon(signedIn)]]"
+                disabled="[[!signedIn]]"
+                on-tap="lock">
+        </paper-icon-button>
+    </template>
+    <script>
+      Polymer({
+        is: 'na-toolbar',
+
+        behaviors: [
+          Polymer.AppNetworkStatusBehavior
+        ],
+
+        properties: {
+          signedIn: {
+            type: Boolean,
+            notify: true,
+            value: false
+          }
+        },
+
+        computeLockIcon: function (signedIn) {
+          return signedIn ? 'lock-open' : 'lock';
+        },
+
+        lock: function () {
+          this.fire('sign-out');
         }
-
-        iron-icon:first-child {
-          margin-left: 1em;
-        }
-      }
-    </style>
-    <iron-icon icon="custom-icons2:arrow-back" role="img"></iron-icon>
-    <h1></h1>
-    <iron-icon icon="custom-icons:breze-grau" role="img"></iron-icon>
-    <iron-icon icon="cloud-off" hidden$="[[online]]"></iron-icon>
-    <paper-icon-button
-        icon="[[computeLockIcon(signedIn)]]"
-        disabled="[[!signedIn]]"
-        on-tap="lock">
-    </paper-icon-button>
-  </template>
-  <script>
-    Polymer({
-      is: 'na-toolbar',
-
-      behaviors: [
-        Polymer.AppNetworkStatusBehavior
-      ],
-
-      properties: {
-        signedIn: {
-          type: Boolean,
-          notify: true,
-          value: false
-        }
-      },
-
-      computeLockIcon: function(signedIn) {
-        return signedIn ? 'lock-open' : 'lock';
-      },
-
-      lock: function() {
-        this.fire('sign-out');
-      }
-    });
-  </script>
+      });
+    </script>
 </dom-module>
