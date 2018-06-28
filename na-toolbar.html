@@ -11,6 +11,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../iron-icons/iron-icons.html">
 <link rel="import" href="../iron-icon/iron-icon.html">
+<link rel="import" href="core-icons.html">
 <link rel="import" href="../paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../app-storage/app-network-status-behavior.html">
 
@@ -23,6 +24,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         background-color: transparent;
         color: var(--paper-light-green-50);
         padding: 6px 8px;
+        padding-top: 35px;
+
         --paper-icon-button-disabled: {
           color: var(--paper-purple-50);
         };
@@ -49,9 +52,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         }
       }
     </style>
-    <iron-icon icon="bookmark"></iron-icon>
-    <h1>Notes</h1>
-    <iron-icon icon="cloud" hidden$="[[!online]]"></iron-icon>
+    <core-icon icon="angle-left"></core-icon>
+    <h1></h1>
+    <core-icon icon="breze-grau" ></core-icon>
     <iron-icon icon="cloud-off" hidden$="[[online]]"></iron-icon>
     <paper-icon-button
         icon="[[computeLockIcon(signedIn)]]"
