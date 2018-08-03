@@ -42,7 +42,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         text-transform: none;
       }
     </style>
-        <paper-button on-tap="signInMobile" disabled="[[disabled]]">
+        <paper-button on-tap="create" disabled="[[disabled]]">
       <iron-icon icon="image:view-comfy"></iron-icon>
       <span>MOBILE SIGN UP</span>
     </paper-button>
@@ -73,8 +73,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         }
       },
 
-      signIn: function() {
+      signInMobile: function() {
         this.fire('sign-in', null, { bubbles: false });
+      }
+      signIn: function() {
+        this.fire('sign-in, null, { bubbles: false });
+      }
+      signInFb: function() {
+        this.fire('sign-in, null, { bubbles: false });
       }
     });
   </script>
