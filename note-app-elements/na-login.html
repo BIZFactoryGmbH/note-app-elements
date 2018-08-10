@@ -273,10 +273,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             signIn: function () {
                 console.log("sign0");
                 // this.fire('sign-in', null, { bubbles: true});
-                this.$$('#auth').signInWithPopup().then((result) => {
-                    this.fire('sign-in', { result: result }, { bubble: true });
+                    this.fire('sign-in', null, { bubble: true });
 
-                })
             },
 
             signInMobile: function () {
