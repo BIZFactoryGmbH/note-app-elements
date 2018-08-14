@@ -9,9 +9,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="../iron-icons/iron-icons.html">
+<link rel="import" href="../paper-button/paper-button.html">
 <link rel="import" href="../iron-icon/iron-icon.html">
-<link rel="import" href="./core-icons.html">
+<link rel="import" href="../iron-icons/iron-icons.html">
+<link rel="import" href="../paper-button/paper-button.html">
 <link rel="import" href="../paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../app-storage/app-network-status-behavior.html">
 
@@ -50,11 +51,39 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 --iron-icon-height: 36px;
             }
 
-            paper-icon-button{
-                position: absolute;
-                right: 0;
+
+
+
+            #back {
+                content: "";
+                background-image: url('/images/angle-left-2x.png');
+                background-position: center;
+                background-repeat: no-repeat;
+
+                background-size: contain;
+                height: 41px;
+                width: 21px;
+
+                margin: 0;
+                padding: 0;
+                margin-top: 15px;
             }
 
+            #breze {
+                content: "";
+                background-image: url('/images/breze-hellgrau-2x.png');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+
+                height: 36px;
+                width: 42px;
+ position: absolute;
+                right: 0;
+                margin: 0;
+                padding: 0;
+                margin-top: 15px;
+            }
 
             @media (min-width: 640px) {
                 iron-icon,
@@ -67,15 +96,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 }
             }
         </style>
-        <iron-icon icon="custom-icons2:angle-left" role="img" class="thin" on-tap="close"></iron-icon>
+        <paper-button on-tap="close" id="back">
+        </paper-button>
+        <iron-icon icon="icons:menu" on-tap="close"></iron-icon>
 
         <iron-icon icon="custom-icons:breze-grau" role="img" class="wide"></iron-icon>
         <iron-icon icon="cloud-off" hidden$="[[online]]"></iron-icon>
-        <paper-icon-button
+        <paper-button
                 icon="[[computeLockIcon(signedIn)]]"
-
+                id="breze"
                 on-tap="lock">
-        </paper-icon-button>
+        </paper-button>
     </template>
     <script>
       Polymer({
@@ -91,7 +122,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             notify: true,
             value: false
           },
-          base:String,
+          base: String,
           disabled: {
             type: Boolean,
             reflectToAttribute: true,
