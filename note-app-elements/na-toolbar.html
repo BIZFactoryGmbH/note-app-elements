@@ -140,8 +140,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         },
         close: function () {
           this.parentNode.querySelector("#editor").close('delete');
-          var base = this.parentNode.querySelector("#na-start");
+          if(!firebase.auth().currentUser){
+            Polymer.dom().querySelector('obandln-app').mobile_register=false;
+          }
+          else{
+              var base = this.parentNode.querySelector("#na-start");
           base._routePageChanged(null);
+          }
+
         }
       });
     </script>
