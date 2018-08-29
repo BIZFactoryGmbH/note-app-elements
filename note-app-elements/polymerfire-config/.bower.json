@@ -1,0 +1,18 @@
+{
+  "name": "polymerfire-config",
+  "main": "polymerfire-config.html",
+  "devDependencies": {
+    "polymerfire": "firebase/polymerfire#master"
+  },
+  "homepage": "https://github.com/FabricElements/polymerfire-config",
+  "_release": "3987ae611c",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "3987ae611c6140019dd9c5db60d128639ff06eb1"
+  },
+  "_source": "https://github.com/FabricElements/polymerfire-config.git",
+  "_target": "*",
+  "_originalSource": "FabricElements/polymerfire-config",
+  "_direct": true
+}

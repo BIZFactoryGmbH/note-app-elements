@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+        content="width=device-width, minimum-scale=1, maximum-scale=1, initial-scale=1, user-scalable=no">
+  <title>skeleton-auth demo</title>
+
+  <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+  <script src="../node_modules/firebase/firebase.js"></script>
+  <script src="../node_modules/@fabricelements/firebase-config/index.js"></script>
+  <script type="module">
+    import '@polymer/iron-demo-helpers/demo-pages-shared-styles.js';
+    import '@polymer/iron-demo-helpers/demo-snippet.js';
+    import '@polymer/polymer/lib/elements/dom-bind.js';
+    import '@polymer/polymer/lib/elements/dom-if.js';
+    import '@polymer/paper-button/paper-button.js';
+    import '@polymer/paper-input/paper-input.js';
+    import '@polymer/paper-item/paper-item.js';
+    import '@polymer/paper-item/paper-item-body.js';
+    import '@polymer/paper-item/paper-icon-item.js';
+    import '@polymer/iron-icons/iron-icons.js';
+    import '@polymer/iron-icons/communication-icons.js';
+    import '@polymer/iron-image/iron-image.js';
+  </script>
+  <script type="module" src="../skeleton-auth.js"></script>
+
+  <custom-style>
+    <style is="custom-style" include="demo-pages-shared-styles">
+      html,
+      body {
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        padding: 1rem;
+        background: white;
+      }
+
+      paper-icon-item {
+        --paper-item-icon-width: 50px;
+      }
+
+      paper-button {
+        color: white;
+        background-color: var(--paper-red-500);
+        margin-top: 2rem;
+      }
+
+      #userBox {
+        display: block;
+      }
+
+      iron-image {
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+      }
+
+      h3 {
+        border-bottom: 1px solid var(--paper-grey-400);
+        padding-bottom: 1rem;
+        margin-bottom: 5rem;
+      }
+
+      skeleton-auth {
+        --auth-button: {
+          display: block;
+          text-align: left;
+          border-radius: 20px;
+          margin: 1rem 0 0 0;
+          padding: 10px 15px;
+        };
+      }
+
+      [hidden] {
+        display: none;
+      }
+    </style>
+  </custom-style>
+</head>
+<body>
+
+<div class="vertical-section-container centered">
+  <h3>Basic skeleton-auth demo</h3>
+  <demo-snippet>
+    <template>
+      <dom-bind>
+        <template>
+          <skeleton-auth google
+                         facebook
+                         twitter
+                         github
+                         anonymous
+                         email
+                         phone
+                         popup
+                         signed-in="{{signedIn}}"
+                         user="{{user}}">
+          </skeleton-auth>
+          <div id="userBox" hidden$="[[!signedIn]]">
+            <paper-icon-item>
+              <iron-image placeholder="http://lorempixel.com/100/100"
+                          sizing="cover" preload src$="[[user.photoURL]]" slot="item-icon"></iron-image>
+              <paper-item-body>
+                [[user.displayName]]
+              </paper-item-body>
+            </paper-icon-item>
+
+            <paper-icon-item>
+              <iron-icon icon="communication:email" slot="item-icon"></iron-icon>
+              <paper-item-body>
+                [[user.email]]
+              </paper-item-body>
+            </paper-icon-item>
+
+            <paper-icon-item>
+              <iron-icon icon="verified-user" slot="item-icon"></iron-icon>
+              <paper-item-body>
+                [[user.emailVerified]]
+              </paper-item-body>
+            </paper-icon-item>
+
+            <paper-icon-item>
+              <div slot="item-icon">uid</div>
+              <paper-item-body>
+                <div>[[user.uid]]</div>
+              </paper-item-body>
+            </paper-icon-item>
+
+            <paper-input readonly label="token" id="token"></paper-input>
+
+            <paper-button onclick="signOut()">Sign Out</paper-button>
+            <paper-button onclick="getToken()">Get token</paper-button>
+          </div>
+        </template>
+      </dom-bind>
+    </template>
+  </demo-snippet>
+</div>
+<script>
+  /* eslint-disable no-unused-vars*/
+
+  /**
+   * Sign Out
+   *
+   * @private
+   */
+  function signOut() {
+    const element = document.querySelector('skeleton-auth');
+    element.signOut();
+  }
+
+  /**
+   * jsonLog
+   *
+   * @param {Object} object
+   * @private
+   */
+  function jsonLog(object) {
+    console.log(object);
+  }
+
+  /**
+   * Get Token
+   *
+   * @private
+   */
+  function getToken() {
+    firebase.auth().currentUser.getIdToken(true).then(function(token) {
+//            console.log('with ID token', token);
+      const element = document.querySelector('#token');
+      element.value = token;
+    });
+  }
+</script>
+</body>
+</html>

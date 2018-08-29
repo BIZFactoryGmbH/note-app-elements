@@ -1,0 +1,49 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="date-format.html">
+
+<dom-module id="iron-time">
+  <template>
+    <style>
+      :host {
+        @apply(--iron-time-styles);
+      }
+    </style>
+
+    <time id="time" datetime$="{{datetime}}" format$="{{format}}">{{output}}</time>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'iron-time',
+
+      properties: {
+        target: {
+          type: Object
+        },
+        format: {
+          type: String
+        },
+        datetime: {
+          type: String
+        },
+        output: {
+          type: String,
+          computed: 'refresh(datetime, format)'
+        }
+      },
+
+      ready: function() {
+        this.target = this.$.time;
+      },
+
+      refresh: function(datetime, format) {
+        return dateFormat(datetime, format);
+      },
+
+      setMask: function(name, format) {
+        dateFormat.masks[name] = format;
+        return this;
+      }
+    });
+  </script>
+</dom-module>

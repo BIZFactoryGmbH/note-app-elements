@@ -1,0 +1,14 @@
+{
+  "name": "skeleton-auth",
+  "homepage": "https://github.com/FabricElements/skeleton-auth",
+  "_release": "d6fdc0435e",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "d6fdc0435e028782a5926ae787a23cf93fd994a9"
+  },
+  "_source": "https://github.com/FabricElements/skeleton-auth.git",
+  "_target": "*",
+  "_originalSource": "FabricElements/skeleton-auth",
+  "_direct": true
+}

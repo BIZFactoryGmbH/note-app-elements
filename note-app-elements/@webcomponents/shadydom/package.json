@@ -1,0 +1,137 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "@webcomponents/shadydom",
+        "scope": "@webcomponents",
+        "escapedName": "@webcomponents%2fshadydom",
+        "name": "@webcomponents/shadydom",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/andreasdickow/Documents/github/obandln"
+    ]
+  ],
+  "_from": "@webcomponents/shadydom@latest",
+  "_id": "@webcomponents/shadydom@1.1.2",
+  "_inCache": true,
+  "_location": "/@webcomponents/shadydom",
+  "_nodeVersion": "8.11.3",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/shadydom_1.1.2_1531868204359_0.6348910294612451"
+  },
+  "_npmUser": {
+    "name": "azakus",
+    "email": "dfreedm2@gmail.com"
+  },
+  "_npmVersion": "5.6.0",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "@webcomponents/shadydom",
+    "scope": "@webcomponents",
+    "escapedName": "@webcomponents%2fshadydom",
+    "name": "@webcomponents/shadydom",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@webcomponents/shadydom/-/shadydom-1.1.2.tgz",
+  "_shasum": "fa415a397c512bd839e8d5ea8419569b77a1d484",
+  "_shrinkwrap": null,
+  "_spec": "@webcomponents/shadydom",
+  "_where": "/Users/andreasdickow/Documents/github/obandln",
+  "author": {
+    "name": "The Polymer Authors"
+  },
+  "bugs": {
+    "url": "https://github.com/webcomponents/shadydom/issues"
+  },
+  "dependencies": {},
+  "description": "Shadow DOM polyfill",
+  "devDependencies": {
+    "@webcomponents/custom-elements": "^1.1.2",
+    "@webcomponents/shadycss": "^1.3.0",
+    "@webcomponents/template": "^1.3.1",
+    "@webcomponents/webcomponents-platform": "^1.0.0",
+    "eslint": "^4.19.1",
+    "eslint-plugin-html": "^4.0.3",
+    "google-closure-compiler": "^20180506.0.0",
+    "gulp": "^4.0.0",
+    "gulp-rename": "^1.2.3",
+    "gulp-rollup": "^2.16.2",
+    "gulp-size": "^3.0.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "wct-browser-legacy": "^1.0.1",
+    "web-component-tester": "^6.6.0"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "dist": {
+    "integrity": "sha512-au9UMKTgs881UITNZfo6RqoIh4q7K3k/CeXAwcK6qbsb/0NF52X4SWVG/Yeb95hbTrDvH0IlVp6kaGJlpn4P3g==",
+    "shasum": "fa415a397c512bd839e8d5ea8419569b77a1d484",
+    "tarball": "https://registry.npmjs.org/@webcomponents/shadydom/-/shadydom-1.1.2.tgz",
+    "fileCount": 23,
+    "unpackedSize": 359089,
+    "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbTnQsCRA9TVsSAnZWagAARsIQAJPQO1jSPzp/xDyUIhLs\nD9t7r6rTZwHuWOs+iZpF8IGxyUZ527pL6owdzTbZfcjLgUqzySBYR7a9fVms\nCr0gfexFbBP61lidtB9uJoZ0w7+FU8tAplYKX8a/O3KhGCj1QHjwa81KBWxe\nVloUGyGW7TouXmGjF48Y55GIp1o1OA2b554sWtBYo1pOyvObsy0p9dFc2XT5\nYADy71AZZw4vui5Um8kdiYhfFcjHZdbSr5K5iIGX66J+AoJYDcIc6/S7poBZ\nKGB+NTqSEfxS2B0X2CeAI642b5ZIbYdJjRSAqp4O6O637MdPztTDpsc8i6Q9\n4lb0lA6qlRw5WoD8I0GUYinpjykYAziVsGZ5vWYb802Kif0+UIJ0OOAtxSEl\ntZoLzKYlMQHjp2Ai8OlHCIDs782amBecik/5seTa4qC5cE6mjevjTc2StSqO\n2ZQe3uGqjLHhgl2F4H2TKZ5scMgOrFdRJdoSUqRnykuHQSyg/617eK+oOl9s\nTvclSt8nbgRXWx/SlVLR3fB20v3A7gAvEdiDkppBTfWSddbj0L5oyZvEkuXA\nqUXv6L7y+8ssvlFqSXMzKcn3oxk7YssS5a+oq+mkubeMk34K7gkyH2cQU8C7\nCjJRKBfmJdOj9LfNX1B3ZyWPNrAbv9fwSRGVsP+/qA+q+EtqGgiTHhj8Z5NK\nww/r\r\n=iYD/\r\n-----END PGP SIGNATURE-----\r\n"
+  },
+  "files": [
+    "shadydom.min.js*",
+    "src/**/*.js",
+    "externs/**/*.js",
+    "LICENSE.md",
+    "README.md"
+  ],
+  "gitHead": "5b899ff63cacb6c6795e2fb5fc84e6358c89ba8f",
+  "homepage": "https://webcomponents.org/polyfills",
+  "keywords": [
+    "shady-dom",
+    "shadydom",
+    "shadow-dom",
+    "shadowdom",
+    "web-components",
+    "webcomponents",
+    "polyfill",
+    "shim"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "shadydom.min.js",
+  "maintainers": [
+    {
+      "name": "azakus",
+      "email": "dfreedm2@gmail.com"
+    },
+    {
+      "name": "bicknellr",
+      "email": "bicknellr@gmail.com"
+    },
+    {
+      "name": "webcomponents-devs",
+      "email": "polymer-ci@google.com"
+    }
+  ],
+  "name": "@webcomponents/shadydom",
+  "optionalDependencies": {},
+  "publishConfig": {
+    "access": "public"
+  },
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webcomponents/shadydom.git"
+  },
+  "scripts": {
+    "build": "gulp",
+    "lint": "eslint src",
+    "prepack": "npm run build",
+    "regen-package-lock": "rm -rf node_modules package-lock.json; npm install",
+    "test": "wct"
+  },
+  "version": "1.1.2"
+}
