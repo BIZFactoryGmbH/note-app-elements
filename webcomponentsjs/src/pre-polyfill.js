@@ -14,7 +14,7 @@
 window['WebComponents'] = window['WebComponents'] || {'flags':{}};
 
 // loading script
-let file = 'webcomponents-bundle';
+let file = 'webcomponents-lite.js';
 let script = document.querySelector('script[src*="' + file + '"]');
 let flagMatcher = /wc-(.+)/;
 
